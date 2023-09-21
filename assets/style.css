@@ -1,0 +1,50 @@
+:root {
+    --main-padding: 1rem 10rem;
+}
+
+@media screen and (max-width: 986px) {
+    :root {
+        --main-padding: 0.875rem 1.5rem;
+    } 
+}
+
+body {   
+    background-color: azure;
+    margin: 0;
+    width: 100vw;
+}
+/*Navbar Top*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aqua;
+    padding: var(--main-padding);
+}
+
+nav #logo {
+    max-width: 14.0625rem;
+}
+
+nav #burger {
+    max-width: 2.375rem;
+    display: none;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    padding-right: 2.5rem;
+}
+
+@media screen and (max-width: 986px) {
+
+    nav ul {
+        display: none;
+    }
+
+    nav #burger {
+        display: inline;
+    }
+}
