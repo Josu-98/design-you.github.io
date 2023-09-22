@@ -1,26 +1,64 @@
 :root {
-    --main-padding: 1rem 10rem;
+    --main-padding-h: 10rem;
+    --nav-height: 6.25rem;
 }
 
-@media screen and (max-width: 986px) {
-    :root {
-        --main-padding: 0.875rem 1.5rem;
-    } 
-}
+@font-face {
+    font-family: 'Alpino-Bold';
+    src: url('./fonts/Alpino-Bold.woff2') format('woff2');
+         font-weight: 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
 
 body {   
-    background-color: azure;
     margin: 0;
     width: 100vw;
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-align: center;
 }
+
+h1, h2, h3 {
+    font-family: 'Alpino-Bold', Arial, sans-serif;
+}
+
+h1 {
+    --title-size: 14rem;
+    --title-bottom-margin: 3rem;
+
+    margin: 0;
+    padding-bottom: var(--title-bottom-margin);
+    font-size: var(--title-size);
+    line-height: calc(var(--title-size)/1.05);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
 /*Navbar Top*/
 
 nav {
+    height: var(--nav-height);
+    width: calc(100vw - (2*var(--main-padding-h)));
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: aqua;
-    padding: var(--main-padding);
+    /*background-color: #aaa;*/  
+    padding-left: var(--main-padding-h);
+    padding-right: var(--main-padding-h);
 }
 
 nav #logo {
@@ -30,21 +68,59 @@ nav #logo {
 nav #burger {
     max-width: 2.375rem;
     display: none;
+    margin-right: var(--main-padding-h);
+}
+
+nav ul {
 }
 
 nav ul li {
     list-style: none;
     display: inline;
-    padding-right: 2.5rem;
+    padding-left: 2rem;
 }
 
-@media screen and (max-width: 986px) {
+/*Header*/
 
+main {
+    height: calc(100vh - (var(--nav-height)));
+    padding-top: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: var(--main-padding-h);
+    padding-right: var(--main-padding-h);
+}
+
+main p {
+    font-size: 2.25rem;
+}
+
+/*Tablet Scaling*/
+
+@media screen and (max-width: 986px) {
+    :root {
+        --main-padding-h: 5rem;
+    }
+
+    nav {
+        --padding-v: 0.875rem;
+    }
+    
     nav ul {
         display: none;
     }
 
     nav #burger {
         display: inline;
+    } 
+}
+
+/*Mobile Scaling*/
+
+@media screen and (max-width: 540px) {
+    :root {
+        --main-padding-h: 1rem;
     }
 }
