@@ -1,6 +1,8 @@
 :root {
   --main-padding-h: 10rem;
   --nav-height: 6.25rem;
+  --color-main: #FFDC00;
+  --main-font-size: 2.25rem;
 }
 
 @font-face {
@@ -15,7 +17,6 @@
 
 body {
   margin: 0;
-  width: 100vw;
   font-family: "Open Sans", Arial, sans-serif;
   text-align: center;
 }
@@ -36,6 +37,14 @@ h1 {
   line-height: calc(var(--title-size) / 1.05);
 }
 
+h2, h3 {
+  --title-size-2: 3.25rem;
+
+  font-size: var(--title-size-2);
+  text-decoration: underline;
+  text-decoration-color: var(--color-main);
+}
+
 a {
   text-decoration: none;
   color: #000;
@@ -47,6 +56,26 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  color: #000;
+  background-color: var(--color-main);
+  border-color: var(--color-main);
+  border-width: 0;
+  border-radius: 0.865rem;
+  font-family: "Alpino-Bold", Arial, sans-serif;
+  font-size: calc(var(--main-font-size)*1.8);
+  box-shadow: none;
+  padding: 0.2rem 1rem;
+}
+
+button:hover {
+  background-color: #FFEC74;
+}
+
+button:active{
+  background-color: #FFC474;
+}
+
 /*Navbar Top*/
 
 nav {
@@ -56,7 +85,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #aaa;
+  background-color: #fff;
   padding-left: var(--main-padding-h);
   padding-right: var(--main-padding-h);
   z-index: 10;
@@ -69,10 +98,6 @@ nav #logo {
 nav #burger {
   max-width: 2.375rem;
   display: none;
-  padding-right: var(--main-padding-h);
-}
-
-nav ul {
 }
 
 nav ul li {
@@ -84,7 +109,7 @@ nav ul li {
 /*Header*/
 
 main {
-  height: calc(100vh - (var(--nav-height)));
+  min-height: calc(100vh - (var(--nav-height)));
   padding-top: var(--nav-height);
   display: flex;
   align-items: center;
@@ -92,17 +117,38 @@ main {
   flex-direction: column;
   padding-left: var(--main-padding-h);
   padding-right: var(--main-padding-h);
+  background-image: url("https://prod.spline.design/pZzc1ja5LZfh5cN8/scene.splinecode");
+}
+
+.main-bg {
+  position: absolute;
+}
+
+.main-content{
+  z-index: 2;
+}
+
+.main-content img {
+  display: none;
+  margin: 0;
+  width: 10rem;
+  height: auto;
 }
 
 main p {
-  font-size: 2.25rem;
+  font-size: var(--main-font-size);
 }
 
 /*Tablet Scaling*/
 
-@media screen and (max-width: 986px) {
+@media screen and (max-width: 1135px) {
   :root {
     --main-padding-h: 5rem;
+    --main-font-size: 1.625rem;
+  }
+
+  h1 {
+    --title-size: 10rem;
   }
 
   nav {
@@ -111,6 +157,7 @@ main p {
 
   nav ul {
     display: none;
+    max-width: 500px;
   }
 
   nav #burger {
@@ -120,19 +167,31 @@ main p {
 
 /*Mobile Scaling*/
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 790px) {
   :root {
-    --main-padding-h: 1rem;
-  }
-
-  nav {
+    --main-padding-h: 0.875rem;
+    --main-font-size: 1.3rem;
   }
   
   h1 {
-    --title-size: 8rem;
+    --title-size: 7.625rem;
+    --title-bottom-margin: 0rem;
+    line-height: 0.5rem;
 
-    margin-top: 10rem;
+    line-height: calc(var(--title-size) / 1.3)
   }
 
+  main p {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .main-bg {
+    display: none;
+  }
+
+  .main-content img {
+    display: inline-block;
+  }
   
 }

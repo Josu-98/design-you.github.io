@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Design.you - Home</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.455/build/spline-viewer.js"></script>
 </head>
 <body>
     <nav>
@@ -18,9 +19,21 @@
         </ul>
         <img id="burger" src="./assets/Graphics/burger_menu.svg" alt="Burger menu">
     </nav>
+    
     <main>
-        <h1>Design your world</h1>
-        <p>Join one of the largest graphic design clubs in the world.<br>Start learning and creating today.</p>
+        <div class="main-bg">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.455/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/pZzc1ja5LZfh5cN8/scene.splinecode"></spline-viewer>
+        </div>
+        <div class="main-content">
+            <img src="./assets/Graphics/Lemon Kun.png" alt="design.you mascot Lemon Kun">
+            <h1>Design<br>your world</h1>
+            <p>Join one of the largest graphic design clubs in the world.<br>Start learning and creating today.</p>
+            <button>Join us!</button>
+        </div>
     </main>
+    <article id="what-we-do">
+        <h2>What we do</h2>
+    </article>
 </body>
 </html>
