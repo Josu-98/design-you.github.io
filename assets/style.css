@@ -272,6 +272,14 @@ main p {
   max-inline-size: var(--gallery-secondary-width);
 }
 
+/*Join Us*/
+
+.join-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*Tablet Scaling*/
 
 @media screen and (max-width: 1700px) {
