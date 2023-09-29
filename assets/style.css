@@ -135,6 +135,12 @@ nav ul li {
   padding-left: 2rem;
 }
 
+.cont {
+  min-height: calc(100vh - (var(--nav-height)));
+  padding-left: var(--main-padding-h);
+  padding-right: var(--main-padding-h);
+}
+
 /*Header*/
 
 main {
@@ -169,12 +175,6 @@ main p {
 }
 
 /*What we do*/
-
-.cont {
-  min-height: calc(100vh - (var(--nav-height)));
-  padding-left: var(--main-padding-h);
-  padding-right: var(--main-padding-h);
-}
 
 .card-cont {
   display: flex;
@@ -296,6 +296,7 @@ main p {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  min-height: calc((100vh - (var(--nav-height))) / 2);
 }
 
 #join-us h2{
@@ -338,6 +339,7 @@ main p {
 body {
   animation: bg-fade linear both;
   animation-timeline: view();
+  animation-duration: 1ms;
   animation-range: contain 87% cover 89%;
 }
 
@@ -346,9 +348,6 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*animation: bg-fade linear both;
-  animation-timeline: view();
-  animation-range: entry 20% cover 50%;*/
 }
 
 footer img {
