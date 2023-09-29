@@ -63,7 +63,7 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
+button, input[type=submit] {
   color: #000;
   background-color: var(--color-main);
   border-color: var(--color-main);
@@ -80,12 +80,29 @@ button.small {
   font-size: calc(var(--main-font-size)*1.4);
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
   background-color: #FFEC74;
 }
 
 button:active{
   background-color: #FFC474;
+}
+
+form {
+  margin: 2rem 0;
+}
+
+label{
+  font-size: var(--main-font-size);
+}
+
+input[type=text] {
+  border-radius: 2rem;
+  border-color: var(--color-neutral);
+  font-size: 3rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  text-align: center;
+  margin-top: 3rem;
 }
 
 /*Navbar Top*/
@@ -274,10 +291,75 @@ main p {
 
 /*Join Us*/
 
+#join-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#join-us h2{
+  margin-top: 0;
+}
+
 .join-cont {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.join-cont img {
+  max-width: 25rem;
+  border-radius: 2rem;
+  margin: 2rem;
+}
+
+.join-cont a {
+  text-decoration: underline;
+  color: #BEBEBE;
+}
+
+.join-cont a:hover {
+  color: #000;
+}
+
+/*Footer*/
+
+@keyframes bg-fade {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: var(--color-main);
+  }
+}
+
+body {
+  animation: bg-fade linear both;
+  animation-timeline: view();
+  animation-range: contain 87% cover 89%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  /*animation: bg-fade linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;*/
+}
+
+footer img {
+  min-width: 70rem;
+  margin-bottom: 10rem;
+}
+
+footer ul li {
+  list-style: none;
+  display: inline;
+  padding-left: 2rem;
 }
 
 /*Tablet Scaling*/
@@ -367,6 +449,32 @@ main p {
   #our-mission .quote-large {
     font-size: calc(var(--main-font-size) * 3);
     margin-top: 2rem;
+  }
+
+  #join-us {
+    margin-top: 2rem;
+  }
+
+  input[type=text] {
+    font-size: 1.625rem;
+  }
+
+  footer img {
+    min-width: 20rem;
+  }
+
+  footer img {
+    margin-bottom: 0;
+  }
+
+  footer ul {
+    padding: 0;
+  }
+
+  footer ul li {
+    display: block;
+    padding-left: 0;
+    padding-top: 3rem;
   }
   
 }
