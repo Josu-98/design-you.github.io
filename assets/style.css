@@ -107,6 +107,44 @@ input[type=text] {
 
 /*Navbar Top*/
 
+@media screen and (min-width: 1135px) {
+
+  @keyframes logo-move-in {
+    from {
+      transform: translateX(calc(50vw - 17rem));
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes nav-fade-in{
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  nav #logo {
+    animation: logo-move-in linear both;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-range: contain 100% cover 118%;
+  }
+
+  nav ul {
+    animation: nav-fade-in linear both;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-range: contain 100% cover 118%;
+  }
+  
+}
+
 nav {
   height: var(--nav-height);
   width: calc(100vw - (2 * var(--main-padding-h)));
@@ -336,18 +374,16 @@ main p {
   }
 }
 
-body {
-  animation: bg-fade linear both;
-  animation-timeline: view();
-  animation-duration: 1ms;
-  animation-range: contain 87% cover 89%;
-}
-
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: bg-fade linear both;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-range: cover 20% cover 50%;
+  z-index: 10;
 }
 
 footer img {
