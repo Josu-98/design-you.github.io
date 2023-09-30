@@ -107,7 +107,7 @@ input[type=text] {
 
 /*Navbar Top*/
 
-@media screen and (min-width: 1135px) {
+@media screen and (min-width: 1136px) {
 
   @keyframes logo-move-in {
     from {
@@ -118,31 +118,43 @@ input[type=text] {
       transform: translateX(0);
     }
   }
+}
 
-  @keyframes nav-fade-in{
+@media screen and (max-width: 1135px) {
+
+  @keyframes logo-move-in {
     from {
-      opacity: 0;
+      transform: translateX(calc(50vw - 11rem));
     }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  nav #logo {
-    animation: logo-move-in linear both;
-    animation-timeline: view();
-    animation-duration: 1ms;
-    animation-range: contain 100% cover 118%;
-  }
-
-  nav ul {
-    animation: nav-fade-in linear both;
-    animation-timeline: view();
-    animation-duration: 1ms;
-    animation-range: contain 100% cover 118%;
-  }
   
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  
+  @keyframes logo-move-in {
+    from {
+      transform: translateX(calc(50vw - 7.5rem));
+    }
+  
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+
+@keyframes nav-fade-in{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 nav {
@@ -160,11 +172,22 @@ nav {
 
 nav #logo {
   max-width: 14.0625rem;
+  animation: logo-move-in linear both;
+    animation-timeline: view();
+    animation-duration: 1ms;
+    animation-range: contain 100% cover 118%;
 }
 
 nav #burger {
   max-width: 2.375rem;
   display: none;
+}
+
+nav ul, nav #burger {
+  animation: nav-fade-in linear both;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-range: contain 100% cover 118%;
 }
 
 nav ul li {
