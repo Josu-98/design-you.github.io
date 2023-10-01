@@ -218,6 +218,7 @@ main {
 
 .main-bg {
   position: absolute;
+  width: 100%;
 }
 
 .main-content{
